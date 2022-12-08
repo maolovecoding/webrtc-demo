@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <video autoplay playsinline muted src="../9a91f68dc261be4dea1a825f5c1ddaf5.mov" id="localVideo"></video>
+  <script>
+// 获取本地音视频流
+async function getLocalStream(constraints) {
+  // 获取媒体流
+  const stream = await navigator.mediaDevices.getUserMedia(constraints)
+  // 将媒体流设置到 video 标签上播放
+  playLocalStream(stream)
+}
+
+// 播放本地视频流
+function playLocalStream(stream) {
+  const videoEl = document.getElementById('localVideo')
+  videoEl.srcObject = stream
+}
+
+getLocalStream({
+  audio: false,
+  video: true,
+})
+
+  </script>
+</body>
+
+</html>
