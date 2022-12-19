@@ -1,4 +1,3 @@
-import { initInnerLocalDevice } from "@/utils";
 import { useEffect, useRef } from "react";
 export default () => {
   const canvasRef = useRef<HTMLCanvasElement>();
@@ -32,5 +31,3 @@ export default () => {
     </div>
   );
 };
-
-// initInnerLocalDevice()
